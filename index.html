@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Battles - Army Battle Simulator</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Army Battle Simulator</h1>
+        <form id="battle-config">
+            <h2>Configure Armies</h2>
+            <div id="armies-list"></div>
+            <button type="button" id="add-army">Add Army</button>
+            <h2>Simulation Settings</h2>
+            <label>Number of Simulations: <input type="number" id="num-simulations" value="10" min="1"></label>
+            <button type="submit">Run Simulation</button>
+        </form>
+        <div id="results"></div>
+    </div>
+    <script src="assets/battle.js"></script>
+</body>
+</html>
