@@ -25,11 +25,15 @@ const ARMY_PRESETS = [
 function createArmyConfig(index, preset = null) {
     const div = document.createElement('div');
     div.className = 'army-config';
+    
+    // Find the preset index if preset is provided
+    const presetIndex = preset ? ARMY_PRESETS.findIndex(p => p.name === preset.name) : -1;
+    
     div.innerHTML = `
         <label>Preset
             <select class="preset-select">
                 <option value="">Custom</option>
-                ${ARMY_PRESETS.map((a, i) => `<option value="${i}">${a.name}</option>`).join('')}
+                ${ARMY_PRESETS.map((a, i) => `<option value="${i}" ${presetIndex === i ? 'selected' : ''}>${a.name}</option>`).join('')}
             </select>
         </label>
         <label>Name <input type="text" class="army-name" value="${preset ? preset.name : ''}" required></label>
